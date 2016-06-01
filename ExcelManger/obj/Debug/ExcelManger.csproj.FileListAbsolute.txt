@@ -1,0 +1,4 @@
+D:\C# WORKSPACE\ExcelManger\ExcelManger\bin\Debug\ExcelManger.dll
+D:\C# WORKSPACE\ExcelManger\ExcelManger\bin\Debug\ExcelManger.pdb
+D:\C# WORKSPACE\ExcelManger\ExcelManger\obj\Debug\ExcelManger.dll
+D:\C# WORKSPACE\ExcelManger\ExcelManger\obj\Debug\ExcelManger.pdb
