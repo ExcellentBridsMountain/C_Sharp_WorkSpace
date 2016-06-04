@@ -123,6 +123,38 @@ namespace ExcelManger
         }
 
         /// <summary>
+        /// Creat a Excel workbook and select sheet one
+        /// </summary>
+        /// <returns></returns>
+        internal bool CreatWorkBook()
+        {
+            if (null == this.e_app)
+            {
+                this.GetExcelApplication();
+            }
+
+            try
+            {
+                this.e_Workbook = this.e_app.Workbooks.Add();
+                if ( 1 <= this.e_Workbook.Worksheets.Count )
+                {
+                    this.e_WorkSheet = this.e_Workbook.Worksheets[1];
+                }
+                else
+                {
+                    this.e_Workbook.Worksheets.Add();
+                    this.e_WorkSheet = this.e_Workbook.ActiveSheet;
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        /// <summary>
         /// Get a Excel workSheet by index
         /// </summary>
         /// <param name="index"></param>
@@ -165,9 +197,13 @@ namespace ExcelManger
             return null;
         }
 
-
+        /// <summary>
+        /// Close EXCEL Application
+        /// </summary>
         internal void Close()
         {
+            this.e_WorkSheet = null;
+            this.e_Workbook.Close();
             this.e_app.Quit();
 
             foreach (var item in this.lstCreatedProcessId)
@@ -178,6 +214,7 @@ namespace ExcelManger
                     tempProcess.Kill();
                 }
             }
+            this.e_Workbook = null;
             this.e_app = null;
         }
 
