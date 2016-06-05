@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
 
         private bool tagbool = false;
 
-        private bool autoTag = true;
+        private bool autoTag = true; // Thread Pause and Continue Tag
 
         private delegate void testDelegate();
 
@@ -33,35 +33,53 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread newThread = new Thread(new ThreadStart(testMethod));
-            newThread.IsBackground = true;
-            newThread.Start();
-            this.timeThread = newThread;
+            if ( null == this.timeThread)
+            {
+                Thread newThread = new Thread(new ThreadStart(testMethod));
+                newThread.IsBackground = true;
+                newThread.Start();
+                newThread.Name = "TimerThread";
+                this.timeThread = newThread;
+                this.button1.Text = "To Zero";
+            }
+            else
+            {
+                lock (this)
+                {
+                    this.nowNumber = 0;
+
+                    if ( true == this.tagbool) // if Pause
+                    {
+                        this.button2_Click(sender, e);
+                    }
+                }
+                //MessageBox.Show("Is Running");
+            }
+
         }
 
         private void testMethod()
         {
-            if ( this.InvokeRequired )
+            if ( this.InvokeRequired ) // In Thread which is not UI thread
             {
                 testDelegate testd = testMethod;
-                for (int i = 0; i < 100; i++)
+                while (true)
                 {
                     if (false == autoTag)
                     {
-                        autoResetEvent.WaitOne();
+                        autoResetEvent.WaitOne(); // Pause Thread (No.2 thread TimerThread")
                         autoTag = true;
                     }
-                    Thread.Sleep(100);
-                    this.nowNumber = i;
-                    this.Invoke(testd);
-                }
 
+                    Thread.Sleep(100);
+                    this.Invoke(testd);
+                    this.nowNumber++;
+                }
             }
-            else
+            else // In UI thread
             {
                 this.label1.Text = this.nowNumber.ToString();
-                Application.DoEvents();
-
+                Application.DoEvents(); // refresh Application UI
             }
         }
 
@@ -70,18 +88,24 @@ namespace WindowsFormsApplication1
             if ( false == this.tagbool)
             {
                 this.tagbool = true;
-                this.autoResetEvent.Set();
-                this.autoTag = false;
+                this.autoResetEvent.Reset(); // Pause Thread (No.2 thread TimerThread")
+                this.autoTag = false; 
+                this.button2.Text = "Continue";
                 return;
             }
-
             if (true == this.tagbool )
             {
                 this.tagbool = false;
-                this.autoResetEvent.Reset();
+                this.autoResetEvent.Set();
                 this.autoTag = false;
+                this.button2.Text = "Pause";
                 return;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
