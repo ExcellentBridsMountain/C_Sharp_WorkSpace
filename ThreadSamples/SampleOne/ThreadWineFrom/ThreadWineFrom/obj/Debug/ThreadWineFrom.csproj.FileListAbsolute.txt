@@ -1,0 +1,8 @@
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\bin\Debug\ThreadWineFrom.exe.config
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\bin\Debug\ThreadWineFrom.exe
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\bin\Debug\ThreadWineFrom.pdb
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\obj\Debug\ThreadWineFrom.Form1.resources
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\obj\Debug\ThreadWineFrom.Properties.Resources.resources
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\obj\Debug\ThreadWineFrom.csproj.GenerateResource.Cache
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\obj\Debug\ThreadWineFrom.exe
+D:\GITHUB\C_Sharp_WorkSpace\ThreadSamples\SampleOne\ThreadWineFrom\ThreadWineFrom\obj\Debug\ThreadWineFrom.pdb

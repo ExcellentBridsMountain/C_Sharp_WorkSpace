@@ -4,5 +4,6 @@ D:\C# WORKSPACE\ExcelManger\ExcelManger\obj\Debug\ExcelManger.dll
 D:\C# WORKSPACE\ExcelManger\ExcelManger\obj\Debug\ExcelManger.pdb
 D:\GITHUB\C_Sharp_WorkSpace\ExcelManger\ExcelManger\bin\Debug\ExcelManger.dll
 D:\GITHUB\C_Sharp_WorkSpace\ExcelManger\ExcelManger\bin\Debug\ExcelManger.pdb
+D:\GITHUB\C_Sharp_WorkSpace\ExcelManger\ExcelManger\obj\Debug\ExcelManger.csprojResolveAssemblyReference.cache
 D:\GITHUB\C_Sharp_WorkSpace\ExcelManger\ExcelManger\obj\Debug\ExcelManger.dll
 D:\GITHUB\C_Sharp_WorkSpace\ExcelManger\ExcelManger\obj\Debug\ExcelManger.pdb
