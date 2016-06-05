@@ -1,0 +1,4 @@
+# C# Thread Samples
+
+use deletgate and new thread to refresh Application lable.text (sleep 100 and add One)
+use AutoResetEvent to control created thread
